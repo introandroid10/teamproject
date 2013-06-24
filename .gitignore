@@ -1,0 +1,7 @@
+/bin
+/gen
+.idea/*
+_site/*
+*.prefs
+*.settings
+/.classpath

@@ -8,7 +8,7 @@ Components
 Owner: 
 
 2) Home Activity ( List of Feed Sites ) - pull from SQLite or File
-Owner: 
+Owner: Jesus
 
 3) Feed List ( RSS from site with RSS ) 
 4) Full Details View ( Should perhaps be grouped with the Feed List code ?)
