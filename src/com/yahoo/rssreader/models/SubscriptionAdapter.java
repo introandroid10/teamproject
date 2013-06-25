@@ -15,9 +15,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SubscriptionAdapter extends ArrayAdapter<RSSFeed>{
+public class SubscriptionAdapter extends ArrayAdapter<Feed>{
 	
-	public SubscriptionAdapter(Context context, List<RSSFeed> feeds) {
+	public SubscriptionAdapter(Context context, List<Feed> feeds) {
 		super(context, 0, feeds);
 	}
 	
@@ -29,10 +29,10 @@ public class SubscriptionAdapter extends ArrayAdapter<RSSFeed>{
 			view = inflator.inflate(R.layout.subscription_item, null);
 		}
 		
-		RSSFeed feed = getItem(position);
+		Feed feed = getItem(position);
 		
 		ImageView imageView = (ImageView) view.findViewById(R.id.ivProfile);
-		//ImageLoader.getInstance().displayImage(feed.getImageUrl(), imageView);
+		ImageLoader.getInstance().displayImage(feed.getImageUrl(), imageView);
 
 		TextView nameView = (TextView) view.findViewById(R.id.tvName);
 		String formattedName = new StringBuilder()

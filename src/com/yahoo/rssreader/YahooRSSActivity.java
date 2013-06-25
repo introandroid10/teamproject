@@ -9,8 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.activeandroid.ActiveAndroid;
 import com.yahoo.rssreader.fragments.SubscriptionsFragment;
-import com.yahoo.rssreader.models.RSSFeed;
+import com.yahoo.rssreader.models.Feed;
 
 public class YahooRSSActivity extends FragmentActivity {
 
@@ -20,7 +21,7 @@ public class YahooRSSActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_yahoo_rss);
-		
+				
 		FragmentManager manager = getSupportFragmentManager();
 		subscriptions = (SubscriptionsFragment) manager.findFragmentById(R.id.fragmentSubscriptions);
 	}
@@ -58,10 +59,11 @@ public class YahooRSSActivity extends FragmentActivity {
 		Toast.makeText(this, "Clicked on Add Subscription", Toast.LENGTH_SHORT).show();
 		
 		//PROGRAMATICALLY ADDING A FEED FOR TESTING
-		RSSFeed feed = new RSSFeed();
+		Feed feed = new Feed();
 		feed.setImageUrl("http://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png");
 		feed.setName("Some feed");
 		feed.setUnreadCount(new Random().nextInt(10));
+		feed.save();
 		
 		subscriptions.addFeed(feed);
 		

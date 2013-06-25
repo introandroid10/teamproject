@@ -1,18 +1,16 @@
 package com.yahoo.rssreader.fragments;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.yahoo.rssreader.R;
-import com.yahoo.rssreader.models.RSSFeed;
+import com.yahoo.rssreader.models.Feed;
 import com.yahoo.rssreader.models.SubscriptionAdapter;
 
 
@@ -20,7 +18,7 @@ public class SubscriptionsFragment extends Fragment {
 
 	private SubscriptionAdapter adapter;
 	private ListView lvSubscriptions ;
-	private List<RSSFeed> subscriptions;
+	private List<Feed> subscriptions;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class SubscriptionsFragment extends Fragment {
 	private void loadAdapter() {
 
 		lvSubscriptions = (ListView) getActivity().findViewById(R.id.lvSubscriptions);
-		subscriptions = new ArrayList<RSSFeed>();
+		subscriptions = Feed.getAll();
 		adapter = new SubscriptionAdapter(getActivity(), subscriptions);
 		lvSubscriptions.setAdapter(adapter);
 	}
@@ -42,8 +40,8 @@ public class SubscriptionsFragment extends Fragment {
 		return inflater.inflate(R.layout.fragment_subscriptions, container, false);
 	}
 
-	public void addFeed(RSSFeed feed) {
+	public void addFeed(Feed feed) {
 		adapter.add(feed);
-	}
+	}	
 	
 }
