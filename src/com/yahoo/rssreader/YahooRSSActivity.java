@@ -1,21 +1,21 @@
 package com.yahoo.rssreader;
 
-import java.util.Random;
-
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.activeandroid.ActiveAndroid;
 import com.yahoo.rssreader.fragments.SubscriptionsFragment;
 import com.yahoo.rssreader.models.Feed;
 
 public class YahooRSSActivity extends FragmentActivity {
 
 	private SubscriptionsFragment subscriptions;
+	private ProgressBar progressBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class YahooRSSActivity extends FragmentActivity {
 				
 		FragmentManager manager = getSupportFragmentManager();
 		subscriptions = (SubscriptionsFragment) manager.findFragmentById(R.id.fragmentSubscriptions);
+		progressBar = (ProgressBar) findViewById(R.id.pbMain);
 	}
 
 	@Override
@@ -59,12 +60,15 @@ public class YahooRSSActivity extends FragmentActivity {
 		Toast.makeText(this, "Clicked on Add Subscription", Toast.LENGTH_SHORT).show();
 		
 		//PROGRAMATICALLY ADDING A FEED FOR TESTING
-		Feed feed = new Feed();
-		feed.setImageUrl("http://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png");
-		feed.setName("Some feed");
-		feed.setUnreadCount(new Random().nextInt(10));
-		feed.save();
-		
+//		Feed feed = new Feed();
+//		feed.setImageUrl("http://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png");
+//		feed.setName("Engadget");
+//		feed.setUrl("http://www.engadget.com/rss.xml");
+//		feed.setUnreadCount(new Random().nextInt(10));
+//		feed.save();
+		Feed.deleteAll();
+		Feed feed = Feed.fromRssUrl("http://www.engadget.com/rss.xml");
+		//feed.save();
 		subscriptions.addFeed(feed);
 		
 	}

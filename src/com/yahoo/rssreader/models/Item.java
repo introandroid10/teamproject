@@ -1,12 +1,15 @@
 package com.yahoo.rssreader.models;
 
+import java.io.Serializable;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
 @Table(name="items")
-public class Item extends Model {
+public class Item extends Model implements Serializable {
 
+	private static final long serialVersionUID = -390001050290424159L;
 	@Column(name = "title")
 	private String title;
 	@Column(name = "link")
@@ -17,8 +20,6 @@ public class Item extends Model {
 	private String pubDate;
 	@Column(name = "guid")
 	private String guid;
-	@Column(name = "image")
-	private String image;
 	
 	public String getTitle() {
 		return title;
@@ -50,13 +51,5 @@ public class Item extends Model {
 	public void setGuid(String guid) {
 		this.guid = guid;
 	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
-	
-	
 	
 }

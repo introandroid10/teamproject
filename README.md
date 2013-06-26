@@ -21,3 +21,12 @@ Bonus / Additional Features
 5) Access data from API sites such as Canvas or Tumblr
 6) Search feature for other available RSS sites
 7) Other features?
+
+--- Update from Jesus ----
+
+Added ItemsActivty.java and activity_items.xml as the next part after clicking on a feed from the main page.  Clicking on a feed on the main page passes a bundle that contains that feed object.
+
+Database can read and write.
+Loading an RSS feed from a string url works.
+
+
