@@ -20,7 +20,15 @@ public class Item extends Model implements Serializable {
 	private String pubDate;
 	@Column(name = "guid")
 	private String guid;
+	@Column(name = "unread")
+	private boolean unread = true;
 	
+	public boolean isUnread() {
+		return unread;
+	}
+	public void setUnread(boolean unread) {
+		this.unread = unread;
+	}
 	public String getTitle() {
 		return title;
 	}
