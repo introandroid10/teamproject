@@ -18,6 +18,8 @@ On click of an individual Item should spawn an Intent to go to Item Full Details
 Owner: ? Sameer?
 
 3) Item Full Details View - Once an individual Feed Item is clicked, a new Activity (or Fragment) should be be launched with the Title, Description, Url (and possibly published date) with the ability to launch an Intent to load the Url in a web browser.
+- RSSReaderDetails.java
+- activity_rssreader_details.xml
 
 
 Owner: Lambert
@@ -27,6 +29,7 @@ Owner: Lambert
 Owner: Jesus
 
 Bonus / Additional Features
+
 5) Search feature for other available RSS sites
 6) Long Click to delete feed. - DONE
 7) Or to mark an item as read. 
