@@ -3,8 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+     <TextView
+        android:id="@+id/tvSubscriptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/subscriptions"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <ListView
         android:id="@+id/lvSubscriptions"
+        android:layout_below="@+id/tvSubscriptions"
+        android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"

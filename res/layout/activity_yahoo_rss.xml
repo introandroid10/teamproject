@@ -8,15 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".YahooRSSActivity" >
 
-    <TextView
-        android:id="@+id/tvSubscriptions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/subscriptions"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+    <!-- 
     <fragment
         android:id="@+id/fragmentSubscriptions"
         android:name="com.yahoo.rssreader.fragments.SubscriptionsFragment"
@@ -27,7 +19,19 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvSubscriptions"
         tools:layout="@layout/fragment_subscriptions" />
+    -->
 
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+    </FrameLayout>
+    
     <ProgressBar
         android:id="@+id/pbMain"
         style="?android:attr/progressBarStyleLarge"

@@ -5,25 +5,28 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.yahoo.rssreader.fragments.NewSubscriptionFeedFragment;
 import com.yahoo.rssreader.fragments.SubscriptionsFragment;
 import com.yahoo.rssreader.models.Feed;
 
 public class YahooRSSActivity extends FragmentActivity {
 
 	private SubscriptionsFragment subscriptions;
+	private NewSubscriptionFeedFragment newSubscriptions;
 	private ProgressBar progressBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_yahoo_rss);
-				
-		FragmentManager manager = getSupportFragmentManager();
-		subscriptions = (SubscriptionsFragment) manager.findFragmentById(R.id.fragmentSubscriptions);
+
+		subscriptions = new SubscriptionsFragment();
+		newSubscriptions = new NewSubscriptionFeedFragment();
+		loadSubscriptionFeedFragment();
+		
 		progressBar = (ProgressBar) findViewById(R.id.pbMain);
 	}
 
@@ -56,21 +59,32 @@ public class YahooRSSActivity extends FragmentActivity {
 	}
 
 	private void addSubscriptionActivity() {
-		//TEMP
-		Toast.makeText(this, "Clicked on Add Subscription", Toast.LENGTH_SHORT).show();
 		
-		//PROGRAMATICALLY ADDING A FEED FOR TESTING
-//		Feed feed = new Feed();
-//		feed.setImageUrl("http://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png");
-//		feed.setName("Engadget");
-//		feed.setUrl("http://www.engadget.com/rss.xml");
-//		feed.setUnreadCount(new Random().nextInt(10));
-//		feed.save();
-		Feed.deleteAll();
-		Feed feed = Feed.fromRssUrl("http://www.engadget.com/rss.xml");
-		//feed.save();
-		subscriptions.addFeed(feed);
+		loadAddSubscriptionFeedFragment();		
 		
+	}
+
+	private void loadSubscriptionFeedFragment() {
+		FragmentManager manager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction fts = manager.beginTransaction();
+		fts.replace(R.id.frameContainer, subscriptions);
+		fts.commit();
+	}
+	
+	private void loadAddSubscriptionFeedFragment() {
+		FragmentManager manager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction fts = manager.beginTransaction();
+		fts.replace(R.id.frameContainer, newSubscriptions);
+		fts.commit();
+	}
+	
+	public void loadFeed(String url){
+		Toast.makeText(this, "Loading RSS Feed", Toast.LENGTH_SHORT).show();
+		loadSubscriptionFeedFragment();
+		//Feed.deleteAll();
+		//There needs to be a better way to do this than sending these objects
+		//"http://www.engadget.com/rss.xml"
+		Feed.fromRssUrl(url, progressBar, subscriptions); //Async task
 	}
 
 }

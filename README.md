@@ -4,7 +4,7 @@ RSS Reader Android Teamproject
 Components
 ----------
 
-1) Home Activity ( List of Feed Sites ) - pull from RSS feed to SQLite
+1) Home Activity ( List of Feed Sites ) - pull from RSS feed to SQLite - DONE
 
 Owner: Jesus
 
@@ -17,17 +17,26 @@ Owner:
 
 Owner:
 
-4) Edit Feed - save to SQLIte
+4) Edit Feed - save to SQLIte - DONE
 
 Owner: Jesus
 
 Bonus / Additional Features
 5) Search feature for other available RSS sites
-6) Swipe to delete feed. Or to mark an item as read.
-7) Other features?
+6) Long Click to delete feed. - DONE
+7) Or to mark an item as read. 
+8) Other features?
 
 --- Update from Jesus ----
 
+06/30/2013
+Clicking on the Plus sign to add a feed works now.  Might have issues with incorrect urls.
+Long Click on a Feed will delete it from the view and SQLite database.
+Added an indefinite progress bar when loading a new feed.
+
+Still need to impelment a Refresh.
+
+------
 Added ItemsActivty.java and activity_items.xml as the next part after clicking on a feed from the main page.  Clicking on a feed on the main page passes a bundle that contains that feed object.
 
 Database can read and write.

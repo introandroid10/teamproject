@@ -13,6 +13,8 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.util.Log;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -21,6 +23,7 @@ import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.yahoo.rssreader.fragments.SubscriptionsFragment;
 
 @Table(name = "feeds")
 public class Feed extends Model implements Iterable<Item>, Serializable {
@@ -95,11 +98,15 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 		new Delete().from(Feed.class).execute();
 	}
 
-	public static Feed fromRssUrl(String url){
+	public static Feed fromRssUrl(String url, final ProgressBar progressBar, final SubscriptionsFragment subscriptions){
 		AsyncHttpClient client = new AsyncHttpClient();
 		final Feed feed = new Feed();
 		feed.setUrl(url);
 
+		if(progressBar != null){
+			progressBar.setVisibility(ProgressBar.VISIBLE);
+		}
+		
 		client.get(url, new AsyncHttpResponseHandler(){
 
 			@Override
@@ -127,8 +134,22 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 			@Override
 			public void onFailure(Throwable e, String response) {
 				// Response failed :(
+				Toast.makeText(null, "Could not load RSS Feed", Toast.LENGTH_SHORT).show();
 				super.onFailure(e, response);
-				// Toast.makeText(getApplicationContext(), "Could not load RSS Feed", Toast.LENGTH_SHORT).show();
+			}
+			
+			@Override
+			public void onFinish() {
+				
+				if(progressBar != null){
+					progressBar.setVisibility(ProgressBar.INVISIBLE);
+				}				
+				
+				if(subscriptions != null){
+					subscriptions.addFeed(feed);
+				}
+				
+				super.onFinish();				
 			}
 
 		});
