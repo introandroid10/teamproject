@@ -12,13 +12,15 @@ Owner: Jesus
 
 2) Feed Items List Activity - Individual Items from a specific RSS Feed.  List should display Items from RSS feed.  Maybe bold or highlight unread (not clicked) items.  Must update the Feed unread count.
 On click of an individual Item should spawn an Intent to go to Item Full Details View.  Must pass Item with Intent.
-- 
+- ItemsActivity.java
+- activity_items.xml 
 
-Owner:
+Owner: ? Sameer?
 
 3) Item Full Details View - Once an individual Feed Item is clicked, a new Activity (or Fragment) should be be launched with the Title, Description, Url (and possibly published date) with the ability to launch an Intent to load the Url in a web browser.
 
-Owner:
+
+Owner: Lambert
 
 4) Edit Feed - save to SQLIte - DONE
 
