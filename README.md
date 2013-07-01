@@ -5,11 +5,14 @@ Components
 ----------
 
 1) Home Activity ( List of Feed Sites ) - pull from RSS feed to SQLite - DONE
+- YahooRSSActivity.java
+- activity_yahoo_rss.xml
 
 Owner: Jesus
 
 2) Feed Items List Activity - Individual Items from a specific RSS Feed.  List should display Items from RSS feed.  Maybe bold or highlight unread (not clicked) items.  Must update the Feed unread count.
 On click of an individual Item should spawn an Intent to go to Item Full Details View.  Must pass Item with Intent.
+- 
 
 Owner:
 
