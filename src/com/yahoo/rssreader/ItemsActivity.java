@@ -1,5 +1,7 @@
 package com.yahoo.rssreader;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -20,10 +22,17 @@ public class ItemsActivity extends FragmentActivity {
 				Feed feed = (Feed)bundle.get("feed");
 				Log.d("DEBUG", "Feed{" + feed + "}");
 				Toast.makeText(this, "Feed{" + feed + "}", Toast.LENGTH_SHORT).show();
+				
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(feed.getItem(0).getLink()));
+				startActivity(i);
+				
 			} else {
 				Toast.makeText(this, "Feed not found in bundle", Toast.LENGTH_SHORT).show();
 			}
 		
+			
+			
 		} else {
 			Toast.makeText(this, "Bundle is null", Toast.LENGTH_SHORT).show();
 		}

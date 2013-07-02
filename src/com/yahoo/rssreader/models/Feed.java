@@ -45,7 +45,11 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 	private List<Item> items = new ArrayList<Item>();
 
 	public List<Item> items(){
-		return getMany(Item.class, "Feed");
+		items = new Select()
+		.from(Item.class)
+		.where("feedUrl = '" + this.url + "'" )
+		.execute();
+		return items;
 	}
 
 	public String getImageUrl() {
@@ -80,6 +84,10 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public Item getItem(int index){
+		return items().get(index);
+	}
 
 
 	@Override
@@ -88,6 +96,7 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 	}
 
 	public static List<Feed> getAll() {
+		
 		return new Select()
 		.from(Feed.class)
 		.execute();
@@ -246,7 +255,7 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 						}
 					}
 
-					feed.items.add(item);
+					feed.addItem(item);
 					feed.unreadCount++;
 				}
 
@@ -259,6 +268,13 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 
 	}
 	
+	private void addItem(Item item) {
+		
+		item.setFeed(this);
+		items.add(item);
+		
+	}
+
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();

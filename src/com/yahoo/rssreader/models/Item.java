@@ -22,6 +22,27 @@ public class Item extends Model implements Serializable {
 	private String guid;
 	@Column(name = "unread")
 	private boolean unread = true;
+	@Column(name = "Feed")
+	private Feed feed;
+	@Column(name = "feedUrl")
+	private String feedUrl;
+	
+	public String getFeedUrl(){
+		return feedUrl;
+	}
+	
+	public void setFeedUrl(String feedUrl){
+		this.feedUrl = feedUrl;
+	}
+	
+	public Feed getFeed(){
+		return feed;
+	}
+	
+	public void setFeed(Feed feed){
+		this.feed = feed;
+		feedUrl = feed.getUrl();
+	}
 	
 	public boolean isUnread() {
 		return unread;

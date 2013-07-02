@@ -53,7 +53,6 @@ public class SubscriptionsFragment extends Fragment {
 				
 				Feed feed = adapter.getItem(position);
 				//Toast.makeText(SubscriptionsFragment.this.getActivity(),"CLICKING ON ITEM " + feed, Toast.LENGTH_SHORT).show();
-				
 				Intent intent = new Intent(SubscriptionsFragment.this.getActivity(), ItemsActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putSerializable("feed", feed);
