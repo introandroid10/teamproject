@@ -28,6 +28,9 @@ Owner: Lambert
 
 Owner: Jesus
 
+4.5) Files:
+- RSSReaderApplication.java is used to initialize the sqlite database
+
 Bonus / Additional Features
 
 5) Search feature for other available RSS sites
