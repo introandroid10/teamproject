@@ -9,13 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yahoo.rssreader.models.Item;
 
 public class RSSReaderDetails extends Activity {
-	TextView tvTitle, tvDesc;
+	TextView tvTitle;
+	WebView tvDesc;
 	Item item;
 
 	@Override
@@ -24,7 +26,7 @@ public class RSSReaderDetails extends Activity {
 		setContentView(R.layout.activity_rssreader_details);
 		
 		tvTitle = (TextView) this.findViewById(R.id.DataTitle);
-		tvDesc = (TextView) this.findViewById(R.id.DataDesc);
+		tvDesc = (WebView) this.findViewById(R.id.DataDesc);
 		//tvURL = (TextView) this.findViewById(R.id.DataURL);
 		
 		// Waiting for info from Sameer to get data to put into Details Page
@@ -36,7 +38,8 @@ public class RSSReaderDetails extends Activity {
 				// Push results to Text View
 				tvTitle.setText(Html.fromHtml("<b>" + item.getTitle() + "</b>"));
 				//tvURL.setText(Html.fromHtml(item.getLink()));
-				tvDesc.setText(Html.fromHtml(item.getDescription()));
+				//tvDesc.setText(Html.fromHtml(item.getDescription()));
+				tvDesc.loadData(item.getDescription(), "text/html", null);
 				
 			} else {
 				//Toast.makeText(this, "Item not found in bundle of size " + bundle.size(), Toast.LENGTH_SHORT).show();

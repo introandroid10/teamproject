@@ -17,15 +17,14 @@
         android:paddingRight="20dp"
         android:text="Should see title info" />
 
-    <TextView
+    <WebView
         android:id="@+id/DataDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/DataTitle"
-        android:layout_marginTop="48dp"
-        android:text="Should see description info" />
+        android:layout_marginTop="47dp" />
 
 </RelativeLayout>
