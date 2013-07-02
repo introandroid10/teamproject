@@ -9,5 +9,7 @@
     <string name="button_enter_rss_url">Submit</string>
     <string name="enter_rss_url">Enter RSS Url</string>
     <string name="delete_menu_item">Delete</string>
+    <string name="title_activity_rssreader_details">RSSReaderDetails</string>
+
 
 </resources>
