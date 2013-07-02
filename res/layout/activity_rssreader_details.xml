@@ -42,27 +42,6 @@
 		        android:text="Descripton:"
 		        android:textSize="15sp"
 		        android:textStyle="bold" />
-   			
-   			<TextView
-			    android:id="@+id/DataDesc"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_above="@+id/DetailsURL"
-			    android:text="TextView" />
-    
-
-		    <TextView
-		        android:id="@+id/DetailsURL"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignLeft="@+id/DetailsDescription"
-		        android:layout_below="@+id/DetailsDescription"
-		        android:layout_marginTop="27dp"
-		        android:paddingLeft="20dp"
-		        android:paddingRight="20dp"
-		        android:text="URL:"
-		        android:textSize="15sp"
-		        android:textStyle="bold" />
 
 			<TextView
 			    android:id="@+id/DataURL"
@@ -72,6 +51,26 @@
 			    android:layout_alignTop="@+id/DetailsURL"
 			    android:text="TextView" />
 
+			<TextView
+			    android:id="@+id/DetailsURL"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@+id/DetailsDescription"
+			    android:layout_marginTop="69dp"
+			    android:layout_toLeftOf="@+id/DataTitle"
+			    android:paddingLeft="20dp"
+			    android:paddingRight="20dp"
+			    android:text="URL:"
+			    android:textSize="15sp"
+			    android:textStyle="bold" />
 
+			<TextView
+			    android:id="@+id/DataDesc"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@+id/DetailsDescription"
+			    android:layout_marginTop="15dp"
+			    android:layout_toLeftOf="@+id/DataTitle"
+			    android:text="TextView" />
 
 </RelativeLayout>
