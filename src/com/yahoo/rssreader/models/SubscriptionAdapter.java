@@ -36,13 +36,13 @@ public class SubscriptionAdapter extends ArrayAdapter<Feed>{
 
 		TextView nameView = (TextView) view.findViewById(R.id.tvName);
 		String formattedName = new StringBuilder()
-				.append("<h1>")
+				.append("<h2>")
 				.append(feed.getName())
-				.append("</h1>").toString();
+				.append("</h2>").toString();
 		nameView.setText(Html.fromHtml(formattedName));
 		
 		TextView bodyView = (TextView) view.findViewById(R.id.tvBody);
-		bodyView.setText(Html.fromHtml("<h1>" + feed.getUnreadCount() + "</h1>"));
+		bodyView.setText(Html.fromHtml("<h2>" + feed.getUnreadCount() + "</h2>"));
 		
 		return view;
 	}
