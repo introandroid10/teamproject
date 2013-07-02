@@ -39,6 +39,9 @@ Bonus / Additional Features
 8) Other features?
 
 --- Update from Jesus ----
+07/01/2013
+Added missing files.
+
 
 06/30/2013
 Clicking on the Plus sign to add a feed works now.  Might have issues with incorrect urls.
