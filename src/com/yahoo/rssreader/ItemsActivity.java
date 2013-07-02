@@ -50,19 +50,19 @@ public class ItemsActivity extends FragmentActivity {
 						/*
 						 * Use this for Lamberts code
 						 */
-//						Intent intent = new Intent(getApplicationContext(), RSSReaderDetails.class);
-//						Bundle bundle = new Bundle();
-//						bundle.putSerializable("item", item);
-//						intent.putExtras(bundle);
-//						startActivity(intent);
+						Intent intent = new Intent(getApplicationContext(), RSSReaderDetails.class);
+						Bundle bundle = new Bundle();
+						bundle.putSerializable("item", item);
+						intent.putExtras(bundle);
+						startActivity(intent);
 						
 						/*
 						 * Use this to directly open in WebBrowser
 						 */
 						//Opening a web browser:
-						Intent webPageIntent = new Intent(Intent.ACTION_VIEW);
-						webPageIntent.setData(Uri.parse(item.getLink()));
-						startActivity(webPageIntent);
+//						Intent webPageIntent = new Intent(Intent.ACTION_VIEW);
+//						webPageIntent.setData(Uri.parse(item.getLink()));
+//						startActivity(webPageIntent);
 					}
 				});
 			} else {
