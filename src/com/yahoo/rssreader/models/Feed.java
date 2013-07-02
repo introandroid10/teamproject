@@ -89,6 +89,16 @@ public class Feed extends Model implements Iterable<Item>, Serializable {
 		return items().get(index);
 	}
 
+	@Override
+	public void delete() {
+		super.delete();
+		
+		new Delete()
+		.from(Item.class)
+		.where("feedUrl = '" + this.url + "'" )
+		.execute();
+		
+	}
 
 	@Override
 	public Iterator<Item> iterator() {
