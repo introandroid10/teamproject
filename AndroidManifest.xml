@@ -29,10 +29,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         
         <activity
             android:name="com.yahoo.rssreader.ItemsActivity"/>
+        
+       	<activity
+            android:name="com.yahoo.rssreader.RSSReaderDetails" >
+
+     
+        </activity>
 
     </application>
 

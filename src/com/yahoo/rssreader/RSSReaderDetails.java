@@ -16,19 +16,21 @@ public class RSSReaderDetails extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rssreader_details);
 		
-		tvTitle = (TextView)this.findViewById(R.id.DataTitle);
-		tvDesc = (TextView)this.findViewById(R.id.DataDesc);
-		tvURL = (TextView)this.findViewById(R.id.DataURL);
+		tvTitle = (TextView) this.findViewById(R.id.DataTitle);
+		tvDesc = (TextView) this.findViewById(R.id.DataDesc);
+		tvURL = (TextView) this.findViewById(R.id.DataURL);
+		
+		// Waiting for info from Sameer to get data to put into Details Page
+		
+		// Push results to Text View
+		tvTitle.setText("Pushed Title");
+		tvURL.setText("Pushed URL");
+		tvDesc.setText("Pushed Description");
+
 		
 	}
 	
-	// Waiting for info from Sameer to get data to put into Details Page
-	
-	 // Push results to Text View
-	 protected void showResult(TextView tvTitle) 
-	 {
-		tvTitle.setText("Hello Title");
-	 }
+
 
 	// Not used: In case there's a need to inflate the menu
 	@Override

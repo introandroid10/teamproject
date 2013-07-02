@@ -22,41 +22,22 @@
 		        android:textStyle="bold" />
     		
     		<TextView
-		        android:id="@+id/DataTitle"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_above="@+id/DetailsDescription"
-		        android:layout_marginLeft="20dp"
-		        android:layout_toRightOf="@+id/DetailsTitle"
-		        android:text="TextView" />
-    		
-   			<TextView
-		        android:id="@+id/DetailsDescription"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignLeft="@+id/DetailsTitle"
-		        android:layout_below="@+id/DetailsTitle"
-		        android:layout_marginTop="26dp"
-		        android:paddingLeft="20dp"
-		        android:paddingRight="20dp"
-		        android:text="Descripton:"
-		        android:textSize="15sp"
-		        android:textStyle="bold" />
-
-			<TextView
-			    android:id="@+id/DataURL"
+			    android:id="@+id/DataTitle"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:layout_alignLeft="@+id/DataTitle"
-			    android:layout_alignTop="@+id/DetailsURL"
-			    android:text="TextView" />
-
+			    android:layout_above="@+id/DetailsURL"
+			    android:layout_marginLeft="30dp"
+			    android:layout_toRightOf="@+id/DetailsTitle"
+			    android:paddingRight="20dp"
+			    android:text="Should see title info" />
+    		
+    		
 			<TextView
 			    android:id="@+id/DetailsURL"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:layout_below="@+id/DetailsDescription"
-			    android:layout_marginTop="69dp"
+			    android:layout_below="@+id/DetailsTitle"
+			    android:layout_marginTop="14dp"
 			    android:layout_toLeftOf="@+id/DataTitle"
 			    android:paddingLeft="20dp"
 			    android:paddingRight="20dp"
@@ -65,12 +46,34 @@
 			    android:textStyle="bold" />
 
 			<TextView
+			    android:id="@+id/DataURL"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignLeft="@+id/DataTitle"
+			    android:layout_alignTop="@+id/DetailsURL"
+			    android:paddingRight="20dp"
+			    android:text="Should see URL info" />
+
+			<TextView
+			    android:id="@+id/DetailsDescription"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignLeft="@+id/DetailsTitle"
+			    android:layout_below="@+id/DetailsURL"
+			    android:layout_marginTop="22dp"
+			    android:paddingLeft="20dp"
+			    android:paddingRight="20dp"
+			    android:text="Description:"
+			    android:textSize="15sp"
+			    android:textStyle="bold" />
+
+			<TextView
 			    android:id="@+id/DataDesc"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
+			    android:layout_alignLeft="@+id/DetailsURL"
 			    android:layout_below="@+id/DetailsDescription"
-			    android:layout_marginTop="15dp"
-			    android:layout_toLeftOf="@+id/DataTitle"
-			    android:text="TextView" />
+			    android:layout_marginLeft="20dp"
+			    android:text="Should see description info" />
 
 </RelativeLayout>
