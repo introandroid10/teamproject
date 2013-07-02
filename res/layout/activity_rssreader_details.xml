@@ -7,73 +7,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".RSSReaderDetails" >
-    
-    		<TextView
-		        android:id="@+id/DetailsTitle"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentTop="true"
-		        android:layout_centerHorizontal="false"
-		        android:layout_marginTop="16dp"
-		        android:paddingLeft="20dp"
-		        android:paddingRight="20dp"
-		        android:text="Title:"
-		        android:textSize="15sp"
-		        android:textStyle="bold" />
-    		
-    		<TextView
-			    android:id="@+id/DataTitle"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_above="@+id/DetailsURL"
-			    android:layout_marginLeft="30dp"
-			    android:layout_toRightOf="@+id/DetailsTitle"
-			    android:paddingRight="20dp"
-			    android:text="Should see title info" />
-    		
-    		
-			<TextView
-			    android:id="@+id/DetailsURL"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_below="@+id/DetailsTitle"
-			    android:layout_marginTop="14dp"
-			    android:layout_toLeftOf="@+id/DataTitle"
-			    android:paddingLeft="20dp"
-			    android:paddingRight="20dp"
-			    android:text="URL:"
-			    android:textSize="15sp"
-			    android:textStyle="bold" />
 
-			<TextView
-			    android:id="@+id/DataURL"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_alignLeft="@+id/DataTitle"
-			    android:layout_alignTop="@+id/DetailsURL"
-			    android:paddingRight="20dp"
-			    android:text="Should see URL info" />
+    <TextView
+        android:id="@+id/DataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="20dp"
+        android:text="Should see title info" />
 
-			<TextView
-			    android:id="@+id/DetailsDescription"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_alignLeft="@+id/DetailsTitle"
-			    android:layout_below="@+id/DetailsURL"
-			    android:layout_marginTop="22dp"
-			    android:paddingLeft="20dp"
-			    android:paddingRight="20dp"
-			    android:text="Description:"
-			    android:textSize="15sp"
-			    android:textStyle="bold" />
-
-			<TextView
-			    android:id="@+id/DataDesc"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_alignLeft="@+id/DetailsURL"
-			    android:layout_below="@+id/DetailsDescription"
-			    android:layout_marginLeft="20dp"
-			    android:text="Should see description info" />
+    <TextView
+        android:id="@+id/DataDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/DataTitle"
+        android:layout_marginTop="48dp"
+        android:text="Should see description info" />
 
 </RelativeLayout>

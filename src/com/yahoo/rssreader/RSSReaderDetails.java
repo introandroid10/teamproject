@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.yahoo.rssreader.models.Item;
 
 public class RSSReaderDetails extends Activity {
-	TextView tvTitle, tvDesc, tvURL;
+	TextView tvTitle, tvDesc;
 	Item item;
 
 	@Override
@@ -25,29 +25,29 @@ public class RSSReaderDetails extends Activity {
 		
 		tvTitle = (TextView) this.findViewById(R.id.DataTitle);
 		tvDesc = (TextView) this.findViewById(R.id.DataDesc);
-		tvURL = (TextView) this.findViewById(R.id.DataURL);
+		//tvURL = (TextView) this.findViewById(R.id.DataURL);
 		
 		// Waiting for info from Sameer to get data to put into Details Page
 		Bundle bundle = getIntent().getExtras();
 		if(bundle != null){
 			if(bundle.containsKey("item")){
 				item = (Item)bundle.get("item");
-				Toast.makeText(this, "Item{" + item + "}", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(this, "Item{" + item + "}", Toast.LENGTH_SHORT).show();
 				// Push results to Text View
-				tvTitle.setText(item.getTitle());
-				tvURL.setText(Html.fromHtml(item.getLink()));
+				tvTitle.setText(Html.fromHtml("<b>" + item.getTitle() + "</b>"));
+				//tvURL.setText(Html.fromHtml(item.getLink()));
 				tvDesc.setText(Html.fromHtml(item.getDescription()));
 				
 			} else {
-				Toast.makeText(this, "Item not found in bundle of size " + bundle.size(), Toast.LENGTH_SHORT).show();
+				//Toast.makeText(this, "Item not found in bundle of size " + bundle.size(), Toast.LENGTH_SHORT).show();
 			}
 			
 		} else {
-			Toast.makeText(this, "Bundle is null", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(this, "Bundle is null", Toast.LENGTH_SHORT).show();
 		}
 		
 		
-		tvURL.setOnClickListener(new OnClickListener() {
+		tvTitle.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
