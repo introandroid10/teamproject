@@ -23,7 +23,7 @@ public class ItemsArrayAdapter extends ArrayAdapter<Item> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		LinearLayout v = (LinearLayout) vi.inflate(R.layout.feed_item, null);
-		Log.d("test","test");
+		//Log.d("test","test");
 		Item item = this.getItem(position);
 		TextView tvItemTitle = (TextView) v.findViewById(R.id.tvItemTitle);
 		//TextView tvItemDesc = (TextView) v.findViewById(R.id.tvItemDescription);
